@@ -1,0 +1,25 @@
+{
+  "name": "nodecg-eec-2018-lol",
+  "homepage": "https://github.com/nodecg/nodecg",
+  "authors": [
+    "Jason Chua <jasonc1804@gmail.com>"
+  ],
+  "description": "NodeCG Graphics Bundle for the Esports Event Committee league of Legends Livestream",
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "nodecg-toast": "NodeCGElements/nodecg-toast#^1.0.0",
+    "nodecg-toggle": "NodeCGElements/nodecg-toggle#^1.0.0",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^3.0.1",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.2",
+    "paper-input": "PolymerElements/paper-input#^2.1.1"
+  }
+}

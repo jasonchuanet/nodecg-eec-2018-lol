@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="import" href="../bower_components/paper-input/paper-input.html">
+    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <style>
+        body {
+            display: grid;  
+            grid-template-columns: repeat(3, 1fr);;
+        }
+        paper-input {
+            grid-column: 1 / 4;
+        }
+        paper-button.green {
+            background-color: var(--paper-green-500);
+            color: white;
+        }
+        paper-button.green[active] {
+            background-color: var(--paper-red-500);
+        }
+        paper-button.indigo {
+            background-color: var(--paper-indigo-500);
+            color: white;
+            --paper-button-raised-keyboard-focus: {
+              background-color: var(--paper-pink-a200);
+              color: white;
+            };
+          }
+        paper-button.indigo:hover {
+            background-color: var(--paper-indigo-400);
+        }
+        paper-button[disabled]  {
+            opacity: var(--light-disabled-opacity);
+        }
+    </style>
+</head>
+<body>
+    <paper-input id="name_entry" always-float-label label="Name" onchange="update()"></paper-input>
+    <paper-input id="title_entry" always-float-label label="Title" onchange="update()"></paper-input>
+
+    <paper-button id="3s" raised class="indigo">3s</paper-button>
+    <paper-button id="5s" raised class="indigo">5s</paper-button>
+    <paper-button id="toggle" toggles raised class="green" onclick="lock_input(this.id)">Toggle</paper-button>
+</body>
+<script>
+        const name      = nodecg.Replicant("lower_third_name", 			{defaultValue: ""});
+        const title 	= nodecg.Replicant("lower_third_title", 		{defaultValue: ""});
+
+        const toggle    = nodecg.Replicant("lower_third_toggle", 	    {defaultValue: false});
+        const state_3s = nodecg.Replicant("lower_third_3s", 	        {defaultValue: false});
+        const state_5s = nodecg.Replicant("lower_third_5s", 	        {defaultValue: false});
+
+        const lock      = nodecg.Replicant("lower_third_lock", 	        {defaultValue: false});
+
+        name_entry      = document.getElementById('name_entry');
+        title_entry     = document.getElementById('title_entry');
+        button_3s       = document.getElementById('3s');
+        button_5s       = document.getElementById('5s');
+        button_tog      = document.getElementById('toggle');
+
+        button_tog.addEventListener("change", () => {
+            toggle.value = button_tog.active;
+        });
+
+        name.on('change', () => {
+            name_entry.value = name.value;
+        });
+
+        title.on('change', () => {
+            title_entry.value = title.value;
+        });
+
+        button_3s.on('change', () => {
+            button_3s.active = button_3s.value;
+        });
+
+        toggle.on('change', () => {
+            button_tog.active = toggle.value;
+        });
+
+        lock.on('change', () => {
+            if(lock.value === true){
+                name_entry.disabled = true;
+                title_entry.disabled = true;
+                button_3s.disabled = true;
+                button_5s.disabled = true;
+            } else if(lock.value === false){
+                name_entry.disabled = false;
+                title_entry.disabled = false;
+                button_3s.disabled = false;
+                button_5s.disabled = false;
+            }
+        });
+
+        function update(){
+            name.value  = name_entry.value;
+            title.value = title_entry.value;
+        }
+        function lock_input(except){
+            lock.value = !button_tog.active
+        }
+        </script>
+</html>
