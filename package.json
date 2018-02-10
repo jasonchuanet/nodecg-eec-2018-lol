@@ -1,0 +1,42 @@
+{
+  "name": "nodecg-eec-2018-lol",
+  "version": "0.0.0",
+  "description": "Bundle for the Esports Event Committee league of Legends Livestream",
+  "homepage": "",
+  "author": {
+    "name": "Jason Chua",
+    "email": "jasonc1804@gmail.com",
+    "url": " "
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "~0.9",
+    "dashboardPanels": [
+      {
+        "name": "first-panel",
+        "title": "First Panel",
+        "width": 2,
+        "file": "first-panel.html",
+        "headerColor": "#9f9bbd"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "repository": "https://github.com/rebel1804/nodecg-eec-2018-lol.git",
+  "private": true
+}
