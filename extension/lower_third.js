@@ -21,7 +21,8 @@ module.exports = function (nodecg) {
         if (state_3s.value.active === true) {
             display(3500, state_3s);
         } else {
-            
+            timer = null;
+            active(buttons, false);
         }
     });
 

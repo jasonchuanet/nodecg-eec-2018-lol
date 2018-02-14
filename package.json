@@ -27,11 +27,23 @@
         "width": 3,
         "file": "lower_third.html",
         "headerColor": "#9f9bbd"
+      },
+      {
+        "name": "Countdown",
+        "title": "Countdown",
+        "width": 2,
+        "file": "countdown.html",
+        "headerColor": "#9f9bbd"
       }
     ],
     "graphics": [
       {
         "file": "lower_third.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "countdown.html",
         "width": 1920,
         "height": 1080
       }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="import" href="../dashboard/common.html">
+    <style type="text/css">
+    body{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-row-gap: 0.5em;
+    }
+    paper-input {
+      grid-column: 1/3;
+    }
+    #startstop {
+      grid-column: 1/3;
+    }
+    </style>
+</head>
+<body>
+  <paper-input id="clock" always-float-label label="Time Remaining"></paper-input>
+  <paper-button id='startstop' onclick="tick()" toggles raised  class="green">Start</paper-button>
+  <paper-button onclick="time_update('remove')" raised class="indigo">-1</paper-button>
+  <paper-button onclick="time_update('add')" raised class="indigo">+1</paper-button>
+
+
+
+  <script>
+  const seconds = nodecg.Replicant("countdown_seconds", {defaultValue: "0"});
+  const countdown_active = nodecg.Replicant("countdown_active", {defaultValue: false});
+  clock_entry = document.getElementById("clock");
+  button = document.getElementById("startstop");
+
+  function tick(){
+    if(countdown_active.value === true){
+      time_update('sync');
+      countdown_active.value = false;
+    } else {
+      time_update('sync');
+      countdown_active.value = true;
+    }
+  }
+  function user_entry(value){
+    if(value === true){
+      clock_entry.disabled = false;
+      button.innerHTML='Start';
+    } else {
+      clock_entry.disabled = true;
+      button.innerHTML='Stop';
+    }
+  }
+  function time_update(operation){
+    if(operation === 'add'){
+      seconds.value++;
+    }
+    if(operation === 'remove'){
+      seconds.value--;
+    }
+    if(operation === 'sync'){
+      var time_tmp = clock_entry.value.split(':').reverse();
+      seconds_tmp = (time_tmp[0])+(time_tmp[1]*60);
+      seconds.value = eval(time_tmp[0])+eval(time_tmp[1]*60);
+    }
+    nodecg.sendMessage('countdown_update');
+  }
+  seconds.on('change', () => {
+    var hours = Math.floor(seconds.value / 3600);
+		var minutes = Math.floor((seconds.value - (hours * 3600))/60);
+	  var seconds_f = Math.floor((seconds.value - (minutes * 60)));
+		if(seconds_f.toString().length === 1){
+			seconds_f = "0"+seconds_f;
+		}
+    clock_entry.value = minutes+":"+seconds_f;
+  });
+  countdown_active.on('change', () => {
+    if(countdown_active.value === true){
+      user_entry(false);
+    } else {
+      user_entry(true);
+    }
+  });
+  </script>
+</body>
+</html>
