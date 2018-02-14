@@ -20,37 +20,51 @@ module.exports = function (nodecg) {
     state_3s.on('change', () => {
         if (state_3s.value.active === true) {
             display(3500, state_3s);
+        } else {
+            
         }
     });
 
     state_5s.on('change', () => {
         if (state_5s.value.active === true) {
             display(5500, state_5s);
+        } else {
+            timer = null;
+            active(buttons, false);
         }
     });
 
     toggle.on('change', () => {
         visibility.value = toggle.value.active;
         lock.value = toggle.value.active;
+        if (timer && toggle.value.active === false) {
+            timer = null;
+            active(buttons, false);
+        }
         disable(buttons, toggle.value.active);
     });
 
 	async function display(this_long, triggering_button) {
         toggle.value.active = true;
-        toggle.value.disabled = true;
+        disable(buttons, true);
         await sleep(this_long);
         toggle.value.disabled = false;
-        toggle.value.active = false;
+        disable(buttons, false);
         triggering_button.value.active = false;
     }
     
     function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise(resolve => timer = setTimeout(resolve, ms));
     }
 
     function disable(array, toggle) {
         array.forEach(function(element) {
             element.value.disabled = toggle;
+        });
+    }
+    function active(array, toggle) {
+        array.forEach(function(element) {
+            element.value.active = false;
         });
     }
 };

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="import" href="../bower_components/paper-input/paper-input.html">
-    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../dashboard/common.html">
+    <link rel="import" href="../bower_components/timer-bar/timer-bar.html">
     <style>
         body {
             display: grid;  
@@ -12,29 +12,17 @@
         paper-input {
             grid-column: 1 / 4;
         }
-        paper-button.green {
-            background-color: var(--paper-green-500);
-            color: white;
-        }
-        paper-button.indigo {
-            background-color: var(--paper-indigo-500);
-            color: white;
-            --paper-button-raised-keyboard-focus: {
-              background-color: var(--paper-pink-a200);
-              color: white;
-            };
-          }
-        paper-button[active] {
-            background-color: var(--paper-red-500);
-        }
-        paper-button[disabled]  {
-            opacity: var(--light-disabled-opacity);
+        timer-bar {
+            grid-column: 1 / 4;
+            max-width: calc(100% - 15px);
         }
     </style>
 </head>
 <body>
-    <paper-input id="name_entry" always-float-label label="Name" onchange="update()"></paper-input>
-    <paper-input id="title_entry" always-float-label label="Title" onchange="update()"></paper-input>
+    <paper-input id="name_entry" always-float-label label="Name"></paper-input>
+    <paper-input id="title_entry" always-float-label label="Title"></paper-input>
+
+    <timer-bar id="timer_bar" timer-seconds="" is-running timerVisible=false ></timer-bar>
 
     <paper-button id="3s" toggles raised class="indigo">3s</paper-button>
     <paper-button id="5s" toggles raised class="indigo">5s</paper-button>
@@ -50,18 +38,31 @@
 
         const lock      = nodecg.Replicant("lower_third_lock", 	        {defaultValue: false});
 
-        name_entry      = document.getElementById('name_entry');
-        title_entry     = document.getElementById('title_entry');
-        button_3s       = document.getElementById('3s');
-        button_5s       = document.getElementById('5s');
-        button_tog      = document.getElementById('toggle');
+        let name_entry      = document.getElementById('name_entry');
+        let title_entry     = document.getElementById('title_entry');
+        let button_3s       = document.getElementById('3s');
+        let button_5s       = document.getElementById('5s');
+        let button_tog      = document.getElementById('toggle');
+        //The timer bar is client side only. Just visual candy
+        let timer_bar       = document.getElementById('timer_bar');
+        timer_bar.timerVisible = false;
+
+        name_entry.addEventListener("change", () =>{
+            name.value  = name_entry.value;
+        });
+
+        title_entry.addEventListener("change", () =>{
+            title.value = title_entry.value;
+        });
 
         button_3s.addEventListener("change", () => {
             state_3s.value.active = button_3s.active;
+            timer(3);
         });
 
         button_5s.addEventListener("change", () => {
             state_5s.value.active = button_5s.active;
+            timer(5);
         });
 
         button_tog.addEventListener("change", () => {
@@ -96,9 +97,10 @@
             title_entry.disabled = lock.value;
         });
 
-        function update(){
-            name.value  = name_entry.value;
-            title.value = title_entry.value;
+        function timer(seconds){
+            timer_bar.reset();
+            timer_bar.timerSeconds = seconds;
+            timer_bar.start();
         }
 
         </script>
