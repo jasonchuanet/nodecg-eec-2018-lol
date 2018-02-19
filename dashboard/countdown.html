@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     <link rel="import" href="../dashboard/common.html">
     <style type="text/css">
     body{
@@ -57,16 +58,16 @@
       seconds.value--;
     }
     if(operation === 'sync'){
-      var time_tmp = clock_entry.value.split(':').reverse();
+      let time_tmp = clock_entry.value.split(':').reverse();
       seconds_tmp = (time_tmp[0])+(time_tmp[1]*60);
       seconds.value = eval(time_tmp[0])+eval(time_tmp[1]*60);
     }
     nodecg.sendMessage('countdown_update');
   }
   seconds.on('change', () => {
-    var hours = Math.floor(seconds.value / 3600);
-		var minutes = Math.floor((seconds.value - (hours * 3600))/60);
-	  var seconds_f = Math.floor((seconds.value - (minutes * 60)));
+    let hours = Math.floor(seconds.value / 3600);
+		let minutes = Math.floor((seconds.value - (hours * 3600))/60);
+	  let seconds_f = Math.floor((seconds.value - (minutes * 60)));
 		if(seconds_f.toString().length === 1){
 			seconds_f = "0"+seconds_f;
 		}
