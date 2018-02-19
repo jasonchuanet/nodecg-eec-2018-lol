@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
     <style>
-        #graphic{
-            transition-duration: 0.2s;
-            opacity: 0;
+        body {
+            background-color: black;
+            display: grid;
         }
     </style>
 </head>
-<body>
-<h1>LOWER THIRD</h1>
-<div id="graphic">
-    <div id="name">NAem</div>
-    <div id="title">NAem</div>
-</div>
+<body onload="init();">
+    <canvas id="Canvas" width="1920" height="1080"></canvas>
+</body>
 <script>
     const name      = nodecg.Replicant("lower_third_name", 			{defaultValue: ""});
     const title 	= nodecg.Replicant("lower_third_title", 		{defaultValue: ""});
@@ -25,23 +24,115 @@
     graphic = document.getElementById("graphic");
 
     name.on('change', () => {
-        name_view.innerHTML = name.value;
+        //name_view.innerHTML = name.value;
     });
 
     title.on('change', () => {
-        title_view.innerHTML = title.value;
+        //title_view.innerHTML = title.value;
     });
 
     visibility.on('change', () => {
         if (visibility.value === true){
-            graphic.style.opacity = 1;
+            //graphic.style.opacity = 1;
+            draw_in();
         } else
         if (visibility.value === false){
-            graphic.style.opacity = 0;
+            //graphic.style.opacity = 0;
+            draw_out();
         }
             
     });
 
+    //Animation Script
+    let safety = null;
+
+    let stage = new createjs.Stage("Canvas");
+
+    let draw_name = new createjs.Text("", "Bold 65px Arial", "#000000");
+    let draw_title = new createjs.Text("", "50px Arial", "#000000");
+
+    let backing = new createjs.Shape();
+    backing.height = 150;
+
+    let accent_bar = new createjs.Shape();
+    accent_bar.height = backing.height;
+    accent_bar.x = 0;
+    accent_bar.y = 0;
+    
+    stage.addChild(accent_bar);
+
+    let backing_mask = new createjs.Shape();
+    backing_mask.height = backing.height;
+    stage.addChild(backing_mask);
+    
+    let container = new createjs.Container();
+    container.addChild(backing);
+    container.addChild(draw_name);
+    container.addChild(draw_title);
+
+    stage.addChild(container);
+
+    function init() {
+        createjs.Ticker.setFPS(60);
+        createjs.Ticker.addEventListener("tick", stage);
+    }
+
+    function draw_in() {
+        draw_name.text = name.value;
+        draw_name.x = 25;
+        draw_name.y = 10;
+        
+        draw_title.text = title.value;
+        draw_title.x = 25;
+        draw_title.y = 80;
+
+        backing.x = 0;
+        backing.width = Math.max(draw_name.getMeasuredWidth(), draw_title.getMeasuredWidth()) + 50;
+        
+        backing.graphics.clear();
+        backing.graphics.beginFill("WHITE").drawRect(0, 0, backing.width, backing.height);
+
+        container.x = backing.width+1;
+        container.alpha = 1;
+
+        backing_mask.width = backing.width;
+        backing_mask.graphics.beginFill("BLUE").drawRect(0, 0, backing_mask.width, backing_mask.height);
+        backing_mask.alpha = 0.0;
+
+        container.mask = backing_mask;
+
+        container.cache(0, 0, backing.width, backing.height);
+        
+        accent_bar.width = backing.width + 50
+        accent_bar.graphics.beginFill("RED").drawRect(0, 0, accent_bar.width, accent_bar.height);
+        accent_bar.scaleX = 0;
+        accent_bar.cache(0, 0, accent_bar.width, accent_bar.height);
+        
+
+        
+        safety = createjs.Tween.get(accent_bar, { loop: false })
+            .to({scaleX: 1 }, 300, createjs.Ease.getElasticOut(1, 5)).call(handleComplete);
+        function handleComplete() {
+            createjs.Tween.get(container, { loop: false })
+                .to({x: 0 }, 300, createjs.Ease.getElasticOut(1, 5))
+        }
+        
+    }
+
+    function draw_out() {
+        
+        safety = createjs.Tween.get(container, { loop: false })
+            .to({x: backing.width+1}, 300, createjs.Ease.getElasticOut(1, 5)).call(handleComplete);
+        function handleComplete() {
+            createjs.Tween.get(accent_bar, { loop: false })
+            .to({scaleX: 0}, 300, createjs.Ease.getElasticOut(1, 5))
+        }
+
+
+    }
+        
+
+
 </script>
-</body>
+
 </html>
