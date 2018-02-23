@@ -34,6 +34,13 @@
         "width": 2,
         "file": "countdown.html",
         "headerColor": "#9f9bbd"
+      },
+      {
+        "name": "Bracket",
+        "title": "Bracket",
+        "file": "bracket_primary.html",
+        "headerColor": "#9f9bbd",
+        "fullbleed": true
       }
     ],
     "graphics": [

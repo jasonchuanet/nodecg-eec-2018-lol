@@ -21,6 +21,8 @@
     "iron-component-page": "PolymerElements/iron-component-page#^3.0.1",
     "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.2",
     "paper-input": "PolymerElements/paper-input#^2.1.1",
-    "timer-bar": "eriklumme/timer-bar#^1.1.1"
+    "timer-bar": "eriklumme/timer-bar#^1.1.1",
+    "paper-radio-group": "PolymerElements/paper-radio-group#^2.1.0",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^2.0.2"
   }
 }
