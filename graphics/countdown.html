@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        #myVideo {
+            position: fixed;
+            top:0;
+            bottom: 0;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 50px;
+        }
         #graphic{
             transition-duration: 0.2s;
             opacity: 0;
         }
+        #content {
+            display:table;
+            position: absolute;
+            text-align:center;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 50%;
+            height:25%;
+        }
+        #sub {
+            display: table-cell;
+            vertical-align:middle;
+            
+        }
     </style>
 </head>
 <body>
+<video autoplay muted loop id="myVideo">
+  <source src="https://bitbuilt.net/videos/KFC_guy_eats_chicken_to_Miror_Bs_theme.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+    <div id="content">
+    <div id="sub">
     <h1>Countdown</h1>
-    <div id="clock">0</div>
+    <div id="clock">0</div><br>
     <script>
         const seconds = nodecg.Replicant("countdown_seconds", {defaultValue: "0"});
         const clock_element = document.getElementById("clock")
@@ -25,5 +63,7 @@
             clock_element.innerHTML = minutes+":"+seconds_f; //I'm not supporting hours. 
         });
     </script>
+    </div>
+    </div>
 </body>
 </html>
