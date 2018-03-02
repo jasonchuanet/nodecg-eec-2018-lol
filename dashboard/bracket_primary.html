@@ -13,10 +13,23 @@
     <link rel="import" href="../dashboard/common.html">
     
     <style type="text/css">
-    #three{
+    .bracket_entry{
       display: grid;
       grid-template-columns: 1fr auto 1fr;
+      padding-top: 0.25em;
       grid-row-gap: 0.25em;
+    }
+    .bracket_select{
+      display: grid;
+      grid-template-columns: 1fr auto auto auto 1fr;
+      padding-top: 0.25em;
+      grid-row-gap: 0.25em;
+    }
+    .bracket_entry .activate {
+        grid-column: 1 / 4;
+    }
+    .winner[active] {
+        background-color: var(--paper-green-500);
     }
     </style>
 </head>
@@ -26,73 +39,100 @@
         <paper-tab>Layer 3</paper-tab>
         <paper-tab>Layer 2</paper-tab>
         <paper-tab>Layer 1</paper-tab>
+        <paper-tab>Loosers</paper-tab>
         <div slot="page">
-            <paper-radio-group id="three">
-                    <paper-input id="l3_0" always-float-label label="L3_0"></paper-input>
-                    <paper-radio-button id="l3_01f" name="l3_01f">Feature.</paper-radio-button>
-                    <paper-input id="l3_1" always-float-label label="L3_1"></paper-input>
+            <paper-radio-group class="bracket_entry" id="three">
+                <paper-button class="activate indego" id="three_activate" toggles raised>Activate</paper-button>
+
+                <paper-input id="w3i_00" always-float-label label="W3_00"></paper-input>
+                <paper-radio-button id="w3f_0" name="w3f_0">Feature.</paper-radio-button>
+                <paper-input id="w3i_01" always-float-label label="W3_01"></paper-input>
+                <paper-button class="winner" id="w3w_00" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_0" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_01" toggles raised>Winner</paper-button>
+        
+                <paper-input id="w3i_02" always-float-label label="W3_02"></paper-input>
+                <paper-radio-button id="w3f_1" name="w3f_1">Feature.</paper-radio-button>
+                <paper-input id="w3i_03" always-float-label label="W3_03"></paper-input>
+                <paper-button class="winner" id="w3w_02" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_1" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_03" toggles raised>Winner</paper-button>
+        
+                <paper-input id="w3i_04" always-float-label label="W3_04"></paper-input>
+                <paper-radio-button id="w3f_2" name="w3f_2">Feature.</paper-radio-button>
+                <paper-input id="w3i_05" always-float-label label="W3_05"></paper-input>
+                <paper-button class="winner" id="w3w_04" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_2" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_05" toggles raised>Winner</paper-button>
+        
+                <paper-input id="w3i_06" always-float-label label="W3_06"></paper-input>
+                <paper-radio-button id="w3f_3" name="w3f_3">Feature.</paper-radio-button>
+                <paper-input id="w3i_07" always-float-label label="W3_07"></paper-input>
+                <paper-button class="winner" id="w3w_06" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_3" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_07" toggles raised>Winner</paper-button>
+        
+        
+                <paper-input id="w3i_08" always-float-label label="W3_08"></paper-input>
+                <paper-radio-button id="w3f_4" name="w3f_4">Feature.</paper-radio-button>
+                <paper-input id="w3i_09" always-float-label label="W3_09"></paper-input>
+                <paper-button class="winner" id="w3w_08" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_4" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_09" toggles raised>Winner</paper-button>
+        
+                <paper-input id="w3i_10" always-float-label label="W3_10"></paper-input>
+                <paper-radio-button id="w3f_5" name="w3f_5">Feature.</paper-radio-button>
+                <paper-input id="w3i_11" always-float-label label="W3_11"></paper-input>
+                <paper-button class="winner" id="w3w_10" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_5" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_11" toggles raised>Winner</paper-button>
+        
+                <paper-input id="w3i_12" always-float-label label="W3_12"></paper-input>
+                <paper-radio-button id="w3f_6" name="w3f_6">Feature.</paper-radio-button>
+                <paper-input id="w3i_13" always-float-label label="W3_13"></paper-input>
+                <paper-button class="winner" id="w3w_12" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_6" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_13" toggles raised>Winner</paper-button>
+                
+                <paper-input id="w3i_14" always-float-label label="W3_14"></paper-input>
+                <paper-radio-button id="w3f_7" name="w3f_7">Feature.</paper-radio-button>
+                <paper-input id="w3i_15" always-float-label label="W3_15"></paper-input>
+                <paper-button class="winner" id="w3w_14" toggles raised>Winner</paper-button>
+                <paper-button class="indego" id="w3l_7" toggles raised>Lock</paper-button>
+                <paper-button class="winner" id="w3w_15" toggles raised>Winner</paper-button>
+        
+            </paper-radio-group>
             
-                    <paper-input id="l3_2" always-float-label label="L3_2"></paper-input>
-                    <paper-radio-button id="l3_23f" name="l3_23f">Feature.</paper-radio-button>
-                    <paper-input id="l3_3" always-float-label label="L3_3"></paper-input>
-            
-                    <paper-input id="l3_4" always-float-label label="L3_4"></paper-input>
-                    <paper-radio-button id="l3_45f" name="l3_45f">Feature.</paper-radio-button>
-                    <paper-input id="l3_5" always-float-label label="L3_5"></paper-input>
-            
-                    <paper-input id="l3_6" always-float-label label="L3_6"></paper-input>
-                    <paper-radio-button id="l3_67f" name="l3_67f">Feature.</paper-radio-button>
-                    <paper-input id="l3_7" always-float-label label="L3_7"></paper-input>
-            
-            
-                    <paper-input id="r3_0" always-float-label label="R3_0"></paper-input>
-                    <paper-radio-button id="r3_01f" name="r3_01f">Feature.</paper-radio-button>
-                    <paper-input id="r3_1" always-float-label label="R3_1"></paper-input>
-            
-                    <paper-input id="r3_2" always-float-label label="R3_2"></paper-input>
-                    <paper-radio-button id="r3_23f" name="r3_23f">Feature.</paper-radio-button>
-                    <paper-input id="r3_3" always-float-label label="R3_3"></paper-input>
-            
-                    <paper-input id="r3_4" always-float-label label="R3_4"></paper-input>
-                    <paper-radio-button id="r3_45f" name="r3_45f">Feature.</paper-radio-button>
-                    <paper-input id="r3_5" always-float-label label="R3_5"></paper-input>
-                    
-                    <paper-input id="r3_6" always-float-label label="R3_6"></paper-input>
-                    <paper-radio-button id="r3_67f" name="r3_67f">Feature.</paper-radio-button>
-                    <paper-input id="r3_7" always-float-label label="R3_7"></paper-input>
-            
-                    <paper-button id="r3_23h" toggles raised>Highlight</paper-button>
-            
-                </paper-radio-group>
         </div>
-        <div slot="page">Page 2</div>
+        <div slot="page">
+            <paper-radio-group class="bracket_select" id="two">
+                <paper-button class="activate indego" id="three_activate" toggles raised>Activate</paper-button>
+
+            </paper-radio-group>
+        </div>
         <div slot="page">Page 3</div>
+        <div slot="page">Page 4</div>
     </easy-paper-tabs>
 
     <dom-module id="easy-paper-tabs">
-
         <template>
             <style>
             :host {
                 display: block;
             }
             paper-tabs {
-                background-color: var(--tabs-background-colour, mediumslateblue);
-                --paper-tabs-selection-bar-color: var(--tabs-colour, white);
+                background-color: var(--tabs-background-colour, var(--paper-grey-900));
+                --paper-tabs-selection-bar-color: var(--tabs-colour, yellow);
                 color: var(--tabs-colour, white);
             }
             </style>
-        
             <paper-tabs selected="{{selected}}">
-            <slot></slot>
+                <slot></slot>
             </paper-tabs>
-        
             <iron-pages selected="{{selected}}">
-            <slot name="page"></slot>
+                <slot name="page"></slot>
             </iron-pages>
-            
         </template>
-        
         <script>
         HTMLImports.whenReady(function() {
             Polymer({
@@ -112,6 +152,62 @@
 
   <script>
     const bracket_data = nodecg.Replicant("bracket_data", {defaultValue: {}});
+
+    function match(feature, lock, player_input_0, player_input_1, winner_select_0, winner_select_1){
+        this.feature = feature;
+        this.lock = lock;
+        this.player_input_0 = player_input_0;
+        this.player_input_1 = player_input_1;
+        this.winner_select_0 = winner_select_0;
+        this.winner_select_1 = winner_select_1;
+        this.winner =  function () {
+            if(this.winner_select_0.active && this.winner_select_1.active) {
+                return null;
+            } else
+            if (this.winner_select_0.active) {
+                return this.player_input_0.value;
+            } else 
+            if (this.winner_select_1.active) {
+                return this.player_input_1.value;
+            } else {
+                return null;
+            }
+        }
+        this.loser = function () {
+            if(this.winner_select_0.active && this.winner_select_1.active) {
+                return null;
+            } else
+            if (this.winner_select_0.active) {
+                return this.player_input_1.value;
+            } else 
+            if (this.winner_select_1.active) {
+                return this.player_input_0.value;
+            } else {
+                return null;
+            }
+        }
+    }
+
+    for (var i = 0; i < 8; i++) {
+        //Literally being too lazy to type out all these constructors
+        const string = 
+        "window.w3_" + i + " = new match("+
+        "document.getElementById(\"w3f_" + i + "\")," +
+        "document.getElementById(\"w3l_" + i + "\")," +
+        "document.getElementById(\"w3i_" + pad(i*2, 2) + "\")," +
+        "document.getElementById(\"w3i_" + pad(i*2+1, 2) + "\")," +
+        "document.getElementById(\"w3w_" + pad(i*2, 2) + "\")," +
+        "document.getElementById(\"w3w_" + pad(i*2+1, 2) + "\")"+
+        ");";
+        function pad(num, size) {
+            var s = num+"";
+            while (s.length < size) s = "0" + s;
+            return s;
+        }
+        eval(string.toString());
+    }
+    
+                
 
   </script>
 </body>
