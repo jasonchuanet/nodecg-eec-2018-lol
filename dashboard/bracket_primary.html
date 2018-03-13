@@ -10,26 +10,30 @@
     <link rel="import" href="../bower_components/paper-radio-group/paper-radio-group.html">
     <link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
     <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+    <link rel="import" href="../bower_components/nodecg-replicant-input/nodecg-replicant-input.html">
     <link rel="import" href="../dashboard/common.html">
     
     <style type="text/css">
     .bracket_entry{
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      padding-top: 0.25em;
-      grid-row-gap: 0.25em;
-    }
-    .bracket_select{
-      display: grid;
-      grid-template-columns: 1fr auto auto auto 1fr;
+      grid-template-columns: 1fr 8em 1fr;
       padding-top: 0.25em;
       grid-row-gap: 0.25em;
     }
     .bracket_entry .activate {
         grid-column: 1 / 4;
     }
+    .bracket_entry#one{
+        border-top: solid none 1em;
+    }
     .winner[active] {
         background-color: var(--paper-green-500);
+    }
+    .control_group{
+        display: grid;
+        grid-template-columns: 1fr 8em 1fr;
+        padding: 0;
+        grid-column: 1 / 4;
     }
     </style>
 </head>
@@ -37,81 +41,151 @@
 
     <easy-paper-tabs>
         <paper-tab>Layer 3</paper-tab>
-        <paper-tab>Layer 2</paper-tab>
-        <paper-tab>Layer 1</paper-tab>
+        <paper-tab>Layer 2 + 1</paper-tab>
         <paper-tab>Loosers</paper-tab>
+        
         <div slot="page">
             <paper-radio-group class="bracket_entry" id="three">
                 <paper-button class="activate indego" id="three_activate" toggles raised>Activate</paper-button>
 
-                <paper-input id="w3i_00" always-float-label label="W3_00"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_00" always-float-label label="W3_00"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_0" name="w3f_0">Feature.</paper-radio-button>
-                <paper-input id="w3i_01" always-float-label label="W3_01"></paper-input>
-                <paper-button class="winner" id="w3w_00" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_0" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_01" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_01" always-float-label label="W3_01"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_00" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_0" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_01" toggles raised>Winner</paper-button>
+                </div>
         
-                <paper-input id="w3i_02" always-float-label label="W3_02"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_02" always-float-label label="W3_02"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_1" name="w3f_1">Feature.</paper-radio-button>
-                <paper-input id="w3i_03" always-float-label label="W3_03"></paper-input>
-                <paper-button class="winner" id="w3w_02" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_1" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_03" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_03" always-float-label label="W3_03"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_02" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_1" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_03" toggles raised>Winner</paper-button>
+                </div>
         
-                <paper-input id="w3i_04" always-float-label label="W3_04"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_04" always-float-label label="W3_04"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_2" name="w3f_2">Feature.</paper-radio-button>
-                <paper-input id="w3i_05" always-float-label label="W3_05"></paper-input>
-                <paper-button class="winner" id="w3w_04" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_2" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_05" toggles raised>Winner</paper-button>
-        
-                <paper-input id="w3i_06" always-float-label label="W3_06"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_05" always-float-label label="W3_05"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_04" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_2" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_05" toggles raised>Winner</paper-button>
+                </div>
+
+                <nodecg-replicant-input replicant-name="w3i_06" always-float-label label="W3_06"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_3" name="w3f_3">Feature.</paper-radio-button>
-                <paper-input id="w3i_07" always-float-label label="W3_07"></paper-input>
-                <paper-button class="winner" id="w3w_06" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_3" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_07" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_07" always-float-label label="W3_07"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_06" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_3" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_07" toggles raised>Winner</paper-button>
+                </div>
         
-        
-                <paper-input id="w3i_08" always-float-label label="W3_08"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_08" always-float-label label="W3_08"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_4" name="w3f_4">Feature.</paper-radio-button>
-                <paper-input id="w3i_09" always-float-label label="W3_09"></paper-input>
-                <paper-button class="winner" id="w3w_08" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_4" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_09" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_09" always-float-label label="W3_09"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_08" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_4" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_09" toggles raised>Winner</paper-button>
+                </div>
         
-                <paper-input id="w3i_10" always-float-label label="W3_10"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_10" always-float-label label="W3_10"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_5" name="w3f_5">Feature.</paper-radio-button>
-                <paper-input id="w3i_11" always-float-label label="W3_11"></paper-input>
-                <paper-button class="winner" id="w3w_10" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_5" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_11" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_11" always-float-label label="W3_11"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_10" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_5" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_11" toggles raised>Winner</paper-button>
+                </div>
         
-                <paper-input id="w3i_12" always-float-label label="W3_12"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_12" always-float-label label="W3_12"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_6" name="w3f_6">Feature.</paper-radio-button>
-                <paper-input id="w3i_13" always-float-label label="W3_13"></paper-input>
-                <paper-button class="winner" id="w3w_12" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_6" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_13" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_13" always-float-label label="W3_13"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_12" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_6" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_13" toggles raised>Winner</paper-button>
+                </div>
                 
-                <paper-input id="w3i_14" always-float-label label="W3_14"></paper-input>
+                <nodecg-replicant-input replicant-name="w3i_14" always-float-label label="W3_14"></nodecg-replicant-input>
                 <paper-radio-button id="w3f_7" name="w3f_7">Feature.</paper-radio-button>
-                <paper-input id="w3i_15" always-float-label label="W3_15"></paper-input>
-                <paper-button class="winner" id="w3w_14" toggles raised>Winner</paper-button>
-                <paper-button class="indego" id="w3l_7" toggles raised>Lock</paper-button>
-                <paper-button class="winner" id="w3w_15" toggles raised>Winner</paper-button>
+                <nodecg-replicant-input replicant-name="w3i_15" always-float-label label="W3_15"></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w3w_14" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w3l_7" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w3w_15" toggles raised>Winner</paper-button>
+                </div>
         
             </paper-radio-group>
             
         </div>
         <div slot="page">
-            <paper-radio-group class="bracket_select" id="two">
-                <paper-button class="activate indego" id="three_activate" toggles raised>Activate</paper-button>
+            <paper-radio-group class="bracket_entry" id="two">
+                <paper-button class="activate indego" id="two_activate" toggles raised>Activate</paper-button>
 
+                <nodecg-replicant-input replicant-name="w2i_00" always-float-label label="W2_00" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w2f_0" name="w2f_0">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w2i_01" always-float-label label="W2_01" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w2w_00" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w2l_0" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w2w_01" toggles raised>Winner</paper-button>
+                </div>
+
+                <nodecg-replicant-input replicant-name="w2i_02" always-float-label label="W2_02" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w2f_1" name="w2f_1">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w2i_03" always-float-label label="W2_03" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w2w_02" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w2l_1" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w2w_03" toggles raised>Winner</paper-button>
+                </div>
+
+                <nodecg-replicant-input replicant-name="w2i_04" always-float-label label="W2_04" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w2f_2" name="w2f_2">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w2i_05" always-float-label label="W2_05" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w2w_04" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w2l_2" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w2w_05" toggles raised>Winner</paper-button>
+                </div>
+
+                <nodecg-replicant-input replicant-name="w2i_06" always-float-label label="W2_06" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w2f_3" name="w2f_3">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w2i_07" always-float-label label="W2_07" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w2w_06" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w2l_3" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w2w_07" toggles raised>Winner</paper-button>
+                </div>
+            </paper-radio-group>
+            <paper-radio-group class="bracket_entry" id="one">
+                <paper-button class="activate indego" id="one_activate" toggles raised>Activate</paper-button>
+
+                <nodecg-replicant-input replicant-name="w1i_00" always-float-label label="W1_00" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w1f_0" name="w1f_0">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w1i_01" always-float-label label="W1_01" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w1w_00" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w1l_0" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w1w_01" toggles raised>Winner</paper-button>
+                </div>
+
+                <nodecg-replicant-input replicant-name="w1i_02" always-float-label label="W1_02" disabled></nodecg-replicant-input>
+                <paper-radio-button id="w1f_1" name="w1f_1">Feature.</paper-radio-button>
+                <nodecg-replicant-input replicant-name="w1i_03" always-float-label label="W1_03" disabled></nodecg-replicant-input>
+                <div class="control_group">
+                    <paper-button class="winner" id="w1w_02" toggles raised>Winner</paper-button>
+                    <paper-button class="indego" id="w1l_1" toggles raised>Lock</paper-button>
+                    <paper-button class="winner" id="w1w_03" toggles raised>Winner</paper-button>
+                </div>  
             </paper-radio-group>
         </div>
         <div slot="page">Page 3</div>
-        <div slot="page">Page 4</div>
     </easy-paper-tabs>
 
     <dom-module id="easy-paper-tabs">
@@ -147,67 +221,11 @@
         });
         </script>
     </dom-module>
-
-    
-
   <script>
-    const bracket_data = nodecg.Replicant("bracket_data", {defaultValue: {}});
-
-    function match(feature, lock, player_input_0, player_input_1, winner_select_0, winner_select_1){
-        this.feature = feature;
-        this.lock = lock;
-        this.player_input_0 = player_input_0;
-        this.player_input_1 = player_input_1;
-        this.winner_select_0 = winner_select_0;
-        this.winner_select_1 = winner_select_1;
-        this.winner =  function () {
-            if(this.winner_select_0.active && this.winner_select_1.active) {
-                return null;
-            } else
-            if (this.winner_select_0.active) {
-                return this.player_input_0.value;
-            } else 
-            if (this.winner_select_1.active) {
-                return this.player_input_1.value;
-            } else {
-                return null;
-            }
-        }
-        this.loser = function () {
-            if(this.winner_select_0.active && this.winner_select_1.active) {
-                return null;
-            } else
-            if (this.winner_select_0.active) {
-                return this.player_input_1.value;
-            } else 
-            if (this.winner_select_1.active) {
-                return this.player_input_0.value;
-            } else {
-                return null;
-            }
-        }
-    }
-
-    for (var i = 0; i < 8; i++) {
-        //Literally being too lazy to type out all these constructors
-        const string = 
-        "window.w3_" + i + " = new match("+
-        "document.getElementById(\"w3f_" + i + "\")," +
-        "document.getElementById(\"w3l_" + i + "\")," +
-        "document.getElementById(\"w3i_" + pad(i*2, 2) + "\")," +
-        "document.getElementById(\"w3i_" + pad(i*2+1, 2) + "\")," +
-        "document.getElementById(\"w3w_" + pad(i*2, 2) + "\")," +
-        "document.getElementById(\"w3w_" + pad(i*2+1, 2) + "\")"+
-        ");";
-        function pad(num, size) {
-            var s = num+"";
-            while (s.length < size) s = "0" + s;
-            return s;
-        }
-        eval(string.toString());
-    }
-    
-                
+    const w3l_0 = document.getElementById("w3l_0");
+    w3l_0.addEventListener("active-changed", () => {
+        w3l_0.active
+    }, false);
 
   </script>
 </body>
