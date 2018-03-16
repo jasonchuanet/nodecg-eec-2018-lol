@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "nodecg-toast": "NodeCGElements/nodecg-toast#^1.0.0",
-    "nodecg-toggle": "NodeCGElements/nodecg-toggle#^1.0.0",
+    "nodecg-toggle": "nodecgelements/nodecg-toggle#^1.0.0",
     "nodecg-replicant-input": "rebel1804/nodecg-replicant-input#^1.0.0",
     "paper-button": "PolymerElements/paper-button#^2.0.0",
     "paper-radio-group": "PolymerElements/paper-radio-group#^2.1.0",
