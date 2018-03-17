@@ -13,4 +13,10 @@ module.exports = function (nodecg) {
 		nodecg.log.error('Failed to load countdown clock backend', e.stack);
 		process.exit(1);
 	}
+	try {
+		require('./bracket.js')(nodecg);
+	} catch (e) {
+		nodecg.log.error('Failed to load bracket backend', e.stack);
+		process.exit(1);
+	}
 };
