@@ -319,17 +319,17 @@ module.exports = function (nodecg) {
             round(l4w_00, l4i_00, l4w_01, l4i_01, l3i_00, sorry);
         }
     }); 
-    l4l_0.on('change', (new_value, old_value) => {
+    l4l_1.on('change', (new_value, old_value) => {
         if (new_value = true) {
             round(l4w_02, l4i_02, l4w_03, l4i_03, l3i_01, sorry);
         }
     }); 
-    l4l_0.on('change', (new_value, old_value) => {
+    l4l_2.on('change', (new_value, old_value) => {
         if (new_value = true) {
             round(l4w_04, l4i_04, l4w_05, l4i_05, l3i_02, sorry);
         }
     }); 
-    l4l_0.on('change', (new_value, old_value) => {
+    l4l_3.on('change', (new_value, old_value) => {
         if (new_value = true) {
             round(l4w_06, l4i_06, l4w_07, l4i_07, l3i_03, sorry);
         }
@@ -338,12 +338,12 @@ module.exports = function (nodecg) {
     //Losers layer 3
     l3l_0.on('change', (new_value, old_value) => {
         if (new_value = true) {
-            round(l3w_00, l3i_00, l3w_01, l3i_01, l3i_01, sorry);
+            round(l3w_00, l3i_00, l3w_01, l3i_01, l2i_01, sorry);
         }
     }); 
-    l3l_0.on('change', (new_value, old_value) => {
+    l3l_1.on('change', (new_value, old_value) => {
         if (new_value = true) {
-            round(l3w_02, l3i_02, l3w_03, l3i_03, l3i_03, sorry);
+            round(l3w_02, l3i_02, l3w_03, l3i_03, l2i_03, sorry);
         }
     }); 
 
@@ -353,7 +353,7 @@ module.exports = function (nodecg) {
             round(l2w_00, l2i_00, l2w_01, l2i_01, l1i_00, sorry);
         }
     }); 
-    l2l_0.on('change', (new_value, old_value) => {
+    l2l_1.on('change', (new_value, old_value) => {
         if (new_value = true) {
             round(l2w_02, l2i_02, l2w_03, l2i_03, l1i_01, sorry);
         }

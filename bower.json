@@ -26,6 +26,7 @@
     "paper-input": "PolymerElements/paper-input#^2.1.1",
     "iron-component-page": "PolymerElements/iron-component-page#^3.0.1",
     "iron-pages": "PolymerElements/iron-pages#^2.1.0",
-    "timer-bar": "eriklumme/timer-bar#^1.1.1"
+    "timer-bar": "eriklumme/timer-bar#^1.1.1",
+    "sc-fitted-text": "SupportClass/sc-fitted-text#^1.1.1"
   }
 }

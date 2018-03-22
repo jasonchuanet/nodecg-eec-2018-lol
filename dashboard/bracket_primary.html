@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../bower_components/polymer/polymer.html">
-    <link rel="import" href="../bower_components/polymer/polymer-element.html">
     <link rel="import" href="../bower_components/paper-input/paper-input.html">
     <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
@@ -39,6 +38,10 @@
     }
     .winner[disabled][active] {
         color: var(--paper-grey-800);
+    }
+    nodecg-replicant-input[disabled] {
+        opacity: 1;
+        color:grey;
     }
     .control_group{
         display: grid;
@@ -240,36 +243,36 @@
                 <paper-radio-button id="l4f_0" name="l4f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l4i_01" always-float-label label="L4_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l4w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l4l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l4w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l4i_02" always-float-label label="L4_02" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l4f_1" name="l4f_1">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l4i_03" always-float-label label="L4_03" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l4w_02" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_02" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l4l_1" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l4w_03" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_03" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l4i_04" always-float-label label="L4_04" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l4f_2" name="l4f_2">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l4i_05" always-float-label label="L4_05" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l4w_04" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_04" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l4l_2" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l4w_05" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_05" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l4i_06" always-float-label label="L4_06" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l4f_3" name="l4f_3">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l4i_07" always-float-label label="L4_07" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l4w_06" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_06" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l4l_3" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l4w_07" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l4w_07" raised disabled>Winner</nodecg-button>
                 </div>
 
             </paper-radio-group>
@@ -284,18 +287,18 @@
                 <paper-radio-button id="l3f_0" name="l3f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l3i_01" always-float-label label="L3_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l3w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l3w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l3l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l3w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l3w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l3i_02" always-float-label label="L3_02" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l3f_1" name="l3f_1">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l3i_03" always-float-label label="L3_03" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l3w_02" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l3w_02" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l3l_1" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l3w_03" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l3w_03" raised disabled>Winner</nodecg-button>
                 </div>  
 
 
@@ -303,18 +306,18 @@
                 <paper-radio-button id="l2f_0" name="l2f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l2i_01" always-float-label label="L2_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l2w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l2w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l2l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l2w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l2w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l2i_02" always-float-label label="L2_02" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l2f_1" name="l2f_1">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l2i_03" always-float-label label="L2_03" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l2w_02" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l2w_02" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l2l_1" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l2w_03" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l2w_03" raised disabled>Winner</nodecg-button>
                 </div>    
 
 
@@ -322,18 +325,18 @@
                 <paper-radio-button id="l1f_0" name="l1f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l1i_01" always-float-label label="L1_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l1w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l1w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l1l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l1w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l1w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="l0i_00" always-float-label label="L0_00" disabled></nodecg-replicant-input>
                 <paper-radio-button id="l0f_0" name="l0f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="l0i_01" always-float-label label="L0_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="l0w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l0w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="l0l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="l0w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="l0w_01" raised disabled>Winner</nodecg-button>
                 </div>
             </paper-radio-group>
         </div>
@@ -347,27 +350,27 @@
                 <paper-radio-button id="f1f_0" name="f1f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="f1i_01" always-float-label label="F1_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="f1w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f1w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="f1l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="f1w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f1w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="f0i_00" always-float-label label="F0_00" disabled></nodecg-replicant-input>
                 <paper-radio-button id="f0f_0" name="f0f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="f0i_01" always-float-label label="F0_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="f0w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f0w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="f0l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="f0w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f0w_01" raised disabled>Winner</nodecg-button>
                 </div>
 
                 <nodecg-replicant-input replicant-name="f2i_00" always-float-label label="F2_00" disabled></nodecg-replicant-input>
                 <paper-radio-button id="f2f_0" name="f2f_0">Feature.</paper-radio-button>
                 <nodecg-replicant-input replicant-name="f2i_01" always-float-label label="F2_01" disabled></nodecg-replicant-input>
                 <div class="control_group">
-                    <nodecg-button class="linner" replicant-name="f2w_00" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f2w_00" raised disabled>Winner</nodecg-button>
                     <nodecg-lock-button class="indego" replicant-name="f2l_0" raised active>Lock</nodecg-lock-button>
-                    <nodecg-button class="linner" replicant-name="f2w_01" raised disabled>Winner</nodecg-button>
+                    <nodecg-button class="winner" replicant-name="f2w_01" raised disabled>Winner</nodecg-button>
                 </div>
             </paper-radio-group>
         </div>
