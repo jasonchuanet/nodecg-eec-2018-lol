@@ -64,7 +64,6 @@
   "repository": "https://github.com/rebel1804/nodecg-eec-2018-lol.git",
   "private": true,
   "dependencies": {
-    "polymer": "^1.0.0",
     "polymer-cli": "^1.6.0"
   }
 }
