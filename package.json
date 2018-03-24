@@ -22,20 +22,6 @@
     "compatibleRange": "~0.9",
     "dashboardPanels": [
       {
-        "name": "Lower Third",
-        "title": "Lower Third",
-        "width": 3,
-        "file": "lower_third.html",
-        "headerColor": "#9f9bbd"
-      },
-      {
-        "name": "Countdown",
-        "title": "Countdown",
-        "width": 2,
-        "file": "countdown.html",
-        "headerColor": "#9f9bbd"
-      },
-      {
         "name": "Bracket",
         "title": "Bracket",
         "file": "bracket_primary.html",
@@ -44,16 +30,6 @@
       }
     ],
     "graphics": [
-      {
-        "file": "lower_third.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "countdown.html",
-        "width": 1920,
-        "height": 1080
-      },
       {
         "file": "bracket.html",
         "width": 1920,

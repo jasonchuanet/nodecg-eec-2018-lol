@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../bower_components/polymer/polymer.html">
     <link rel="import" href="../bower_components/nodecg-replicant/nodecg-replicant.html">
@@ -12,110 +13,84 @@
             background-color: darkblue;
         }
         #bracket{
-            max-width:1920px;
-            max-height: 1080px;
+            width:1920px;
+            height: 1080px;
             position: absolute;
         }
         nodecg-text{
             font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 1.5em;
+            width: 5em;
+            text-align: center;
             position: absolute;
+            transition: opacity 1s;
+            opacity: 0;
+        }
+        .height {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-<img id="bracket" src="./bracket.png">
+<div id="target" style="position: absolute; left: 50px; top: 300px; font-size: 100px; letter-spacing: -7px; "></div>
+<video id="bracket" loop src="./bracket.webm"></video>
+
     <div>
-        <nodecg-text max-width="200" replicant-name="w2i_00" style="top:80px;   left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_01" style="top:110px;  left:80px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_00" style="top:238px;  left:185px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_01" style="top:338px;  left:185px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="w2i_02" style="top:150px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_03" style="top:180px;  left:80px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_02" style="top:435px;  left:185px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_03" style="top:535px;  left:185px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="w2i_04" style="top:220px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_05" style="top:250px;  left:80px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_02" style="top:435px;  left:185px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_03" style="top:535px;  left:185px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="w2i_06" style="top:290px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_07" style="top:320px;  left:80px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_04" style="top:633px;  left:185px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_05" style="top:733px;  left:185px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="w2i_08" style="top:360px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_09" style="top:390px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w2i_10" style="top:430px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_11" style="top:460px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w2i_12" style="top:500px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_13" style="top:530px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w2i_14" style="top:570px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w2i_15" style="top:600px;  left:80px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_06" style="top:830px;  left:185px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_07" style="top:930px;  left:185px"></nodecg-text>
 
 
-        <nodecg-text max-width="200" replicant-name="w1i_00" style="top:115px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w1i_01" style="top:145px;  left:400px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_00" style="top:285px;  left:390px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_01" style="top:485px;  left:390px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="w1i_02" style="top:255px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w1i_03" style="top:285px;  left:400px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w1i_04" style="top:395px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w1i_05" style="top:425px;  left:400px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w1i_06" style="top:535px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w1i_07" style="top:565px;  left:400px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_02" style="top:680px;  left:390px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_03" style="top:880px;  left:390px"></nodecg-text>
 
 
-        <nodecg-text max-width="200" replicant-name="w0i_00" style="top:185px;  left:715px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w0i_01" style="top:215px;  left:715px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="w0i_02" style="top:467px;  left:715px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="w0i_03" style="top:497px;  left:715px"></nodecg-text>
-
-
-        <nodecg-text max-width="200" replicant-name="l5i_00" style="top:710px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l5i_01" style="top:740px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l5i_02" style="top:780px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l5i_03" style="top:810px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l5i_04" style="top:850px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l5i_05" style="top:880px;  left:80px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l5i_06" style="top:920px;  left:80px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l5i_07" style="top:950px;  left:80px"></nodecg-text>
-
+        <nodecg-text class="finals2" max-width="190" replicant-name="w0i_00" style="top:395px;  left:595px"></nodecg-text>
+        <nodecg-text class="finals2" max-width="190" replicant-name="w0i_01" style="top:785px;  left:595px"></nodecg-text>
         
-        <nodecg-text max-width="200" replicant-name="l4i_00" style="top:675px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l4i_01" style="top:705px;  left:400px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="l4i_02" style="top:745px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l4i_03" style="top:775px;  left:400px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l4i_04" style="top:815px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l4i_05" style="top:845px;  left:400px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l4i_06" style="top:885px;  left:400px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l4i_07" style="top:915px;  left:400px"></nodecg-text>
+        <nodecg-text class="finals1" max-width="190" replicant-name="f1i_00" style="top:590px;  left:797px"></nodecg-text>
 
 
-        <nodecg-text max-width="200" replicant-name="l3i_00" style="top:710px;  left:715px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l3i_01" style="top:740px;  left:715px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_08" style="top:238px;  left:1630px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_09" style="top:338px;  left:1630px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="l3i_02" style="top:850px;  left:715px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l3i_03" style="top:880px;  left:715px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_10" style="top:435px;  left:1630px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_11" style="top:535px;  left:1630px"></nodecg-text>
 
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_12" style="top:633px;  left:1630px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_13" style="top:733px;  left:1630px"></nodecg-text>
 
-        <nodecg-text max-width="200" replicant-name="l2i_00" style="top:675px;  left:1030px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l2i_01" style="top:705px;  left:1030px"></nodecg-text>
-
-        <nodecg-text max-width="200" replicant-name="l2i_02" style="top:815px;  left:1030px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l2i_03" style="top:845px;  left:1030px"></nodecg-text>
-
-
-        <nodecg-text max-width="200" replicant-name="l1i_00" style="top:745px;  left:1355px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l1i_01" style="top:775px;  left:1355px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_14" style="top:830px;  left:1630px"></nodecg-text>
+        <nodecg-text class="finals8" max-width="190" replicant-name="w2i_15" style="top:930px;  left:1630px"></nodecg-text>
 
 
-        <nodecg-text max-width="200" replicant-name="l0i_00" style="top:745px;  left:1355px"></nodecg-text>
-        <nodecg-text max-width="200" replicant-name="l0i_01" style="top:775px;  left:1355px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_04" style="top:285px;  left:1427px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_05" style="top:485px;  left:1427px"></nodecg-text>
+
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_06" style="top:680px;  left:1427px"></nodecg-text>
+        <nodecg-text class="finals4" max-width="190" replicant-name="w1i_07" style="top:880px;  left:1427px"></nodecg-text>
+
+
+        <nodecg-text class="finals2" max-width="190" replicant-name="w0i_02" style="top:395px;  left:1222px"></nodecg-text>
+        <nodecg-text class="finals2" max-width="190" replicant-name="w0i_03" style="top:785px;  left:1222px"></nodecg-text>
+
+        <nodecg-text class="finals1" max-width="190" replicant-name="f1i_01" style="top:590px;  left:1020px"></nodecg-text>
     </div>
 
     <dom-module id="nodecg-text">
@@ -127,7 +102,7 @@
                 static get properties() {
                     return {
                         align: {
-                            value: "left",
+                            value: "center",
                         }
                     }
                 }
@@ -140,5 +115,55 @@
     </dom-module>
 </body>
 <script>
+    bracket_vid = document.getElementById("bracket");
+
+    finals8 = document.getElementsByClassName("finals8")
+    finals4 = document.getElementsByClassName("finals4")
+    finals2 = document.getElementsByClassName("finals2")
+    finals1 = document.getElementsByClassName("finals1")
+    frame_old = 0
+
+    setInterval(function () {
+        frame = Math.floor(bracket_vid.currentTime*60);
+
+        if(frame > (02)*60){height(finals8, true)}
+        if(frame > (12)*60){height(finals4, true)}
+        if(frame > (24)*60){height(finals2, true)}
+        if(frame > (36)*60){height(finals1, true)}
+        if(frame > (45)*60){
+            height(finals1, false);
+            height(finals2, false);
+            height(finals4, false);
+            height(finals8, false);
+        }
+    }, 5);
+
+    function height(target, option){
+        Array.from(target).forEach(element => {
+            if (option){
+                element.classList.add("height");
+            }
+            else {
+                element.classList.remove("height");
+            }
+            
+        });
+    }
+
+    bracket_vid.addEventListener('playing', event => {
+        height(finals1, false);
+        height(finals2, false);
+        height(finals4, false);
+        height(finals8, false);
+    }, false)
+
+    height(finals1, false);
+    height(finals2, false);
+    height(finals4, false);
+    height(finals8, false);
+    bracket_vid.play();
+
+
+
 </script>
 </html>
